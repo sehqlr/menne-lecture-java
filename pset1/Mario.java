@@ -2,13 +2,14 @@
 
 public class Mario
 {
-    // initializations?
-    private String space;
-    private String brick;
-    private String chasm;
-    private String nline;
-    private int num_rows;
-    
+    // initializations
+    String space;
+    String brick;
+    String chasm;
+    String nline;
+    int num_rows;
+
+    // constructor
     public Mario(int height)
     {
         space = " ";
@@ -28,17 +29,7 @@ public class Mario
             System.out.print(brick);
     }
 
-    public void printReversedRow(int num_sp, int num_br)
-    {
-        // count up for bricks
-        for (int b = 0; b < num_br; b++)
-            System.out.print(brick);
-        // count down for spaces
-        for (int s = num_sp; s > 0; s--)
-            System.out.print(space);
-    }
-
-    public void printPyramid(boolean doubled)
+    public void printPyramid()
     {
         // print out the pyramid
         for (int i = 0; i < num_rows; i++)
@@ -46,12 +37,6 @@ public class Mario
             int num_sp = num_rows - i;
             int num_br = 2 + i;
             printRow(num_sp, num_br);
-        
-            if (doubled == true)
-            {
-                System.out.print(chasm);
-                printReversedRow(num_sp, num_br);
-            }
 
             System.out.print(nline);
         }
@@ -74,7 +59,7 @@ public class Mario
         }
 
         Mario mario = new Mario(height);
-        mario.printPyramid(true);
+        mario.printPyramid();
     }
 
 }
