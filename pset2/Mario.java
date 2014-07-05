@@ -1,4 +1,4 @@
-// put imports here
+package com.sehqlr.launchcode.mario;
 
 public class Mario
 {
