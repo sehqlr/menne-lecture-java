@@ -22,10 +22,10 @@ public class Mario {
     public void buildRow(int num_sp, int num_br) {
         // count down for spaces
         for (int s = num_sp; s > 0; s--)
-            pyramid.append(space);
+            pyramid.append(SP);
         // count up for bricks
         for (int b = 0; b < num_br; b++)
-            pyramid.append(brick);
+            pyramid.append(BR);
     }
 
     public void buildPyramid() {
@@ -33,7 +33,7 @@ public class Mario {
             int num_sp = num_rows - i;
             int num_br = 2 + i;
             buildRow(num_sp, num_br);
-            pyramid.append(nline);
+            pyramid.append(NL);
         }
         System.out.print(pyramid.toString());
     }
