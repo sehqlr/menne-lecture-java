@@ -1,24 +1,27 @@
-// put imports here
+/**
+ * Mario, a half-pyramid builder in Java
+ * by sehqlr, for Menne's CS50 LaunchCode Java class
+ */
+
+// no need for imports in this version
 
 public class Mario
 {
-    // initializations
-    String space;
-    String brick;
-    String chasm;
-    String nline;
-    int num_rows;
+    // ASCII art constants
+    private final String space = " ";
+    private final String brick = "#";
+    private final String nline = "\n";
+
+    // counter for row building.
+    private int num_rows;
 
     // constructor
     public Mario(int height)
     {
-        space = " ";
-        brick = "#";
-        chasm = "\t";
-        nline = "\n";
         num_rows = height;
     }
-    
+
+    // prints each row of pyramid
     public void printRow(int num_sp, int num_br)
     {
         // count down for spaces
@@ -51,6 +54,7 @@ public class Mario
             return;
         }
 
+        // 0 <= height <= 23
         int height = Integer.parseInt(args[0]);
         if (height < 0 || height > 23)
         {
@@ -61,5 +65,4 @@ public class Mario
         Mario mario = new Mario(height);
         mario.printPyramid();
     }
-
 }

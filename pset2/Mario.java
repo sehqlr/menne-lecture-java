@@ -3,18 +3,16 @@ package com.sehqlr.launchcode.mario;
 public class Mario
 {
     // initializations
-    String space = " ";
-    String brick = "#";
-    String nline = "\n";
+    private final String space = " ";
+    private final String brick = "#";
+    private final String nline = "\n";
     
     int num_rows;
-    StringBuilder pyramid = new StringBuilder();
+    private StringBuilder pyramid = new StringBuilder();
 
-    // constructor with initializations
+    // constructor
     public Mario(int height) 
-    {
         num_rows = height;
-    }
 
     public void buildRow(int num_sp, int num_br)
     {
@@ -47,7 +45,8 @@ public class Mario
             return;
         }
 
-        int height = Integer.parseInt(args[0]);
+        private int height = Integer.parseInt(args[0]);
+
         if (height < 0 || height > 23)
         {
             System.out.println("Sorry, height must be between 0 and 23");
@@ -57,5 +56,4 @@ public class Mario
         Mario mario = new Mario(height);
         mario.buildPyramid();
     }
-
 }
