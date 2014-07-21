@@ -6,6 +6,7 @@
 
 package pyramid;
 
+
 public class Mario {
 
 	private final String SP = " ";
@@ -37,35 +38,32 @@ public class Mario {
         }
         System.out.print(pyramid.toString());
     }
-	
-	
+    
+	public int getNum_rows() {
+		return num_rows;
+	}
+
+	public void setNum_rows(int num_rows) {
+		this.num_rows = num_rows;
+	}
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
         // validate user input
         int height;
-
-        if (args.length == 0) {
-            System.out.println("Usage: java Mario height");
-            return;
+        TestIO validator = new HeightValidator("");
+        boolean is_valid = validator.validate(args);
+        
+        if (is_valid) {
+        	height = Integer.parseInt(args[0]);
+        } else {
+        	return;
         }
-
-        try {
-            height = Integer.parseInt(args[0]); 
-        } catch (NumberFormatException nFE) {
-            System.out.println("Height must be an integer.");
-            return;
-        }
-
-        if (height < 0 || height > 23) {
-            System.out.println("Sorry, height must be between 0 and 23");
-            return;
-        }
-
+        
         // construct objects, and print pyramid
         Mario mario = new Mario(height);
         mario.buildPyramid();
     }
 }
-
