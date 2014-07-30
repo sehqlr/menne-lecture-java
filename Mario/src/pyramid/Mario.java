@@ -20,7 +20,7 @@ public class Mario {
 		num_rows = height;
 	}
 	
-    public void buildRow(int num_sp, int num_br) {
+    private void buildRow(int num_sp, int num_br) {
         // count down for spaces
         for (int s = num_sp; s > 0; s--)
             pyramid.append(SP);
@@ -29,7 +29,7 @@ public class Mario {
             pyramid.append(BR);
     }
 
-    public void buildPyramid() {
+    private void buildPyramid() {
         for (int i = 0; i < num_rows; i++) {
             int num_sp = num_rows - i;
             int num_br = 2 + i;
@@ -39,11 +39,11 @@ public class Mario {
         System.out.print(pyramid.toString());
     }
     
-	public int getNum_rows() {
+	private int getNum_rows() {
 		return num_rows;
 	}
 
-	public void setNum_rows(int num_rows) {
+	private void setNum_rows(int num_rows) {
 		this.num_rows = num_rows;
 	}
 
